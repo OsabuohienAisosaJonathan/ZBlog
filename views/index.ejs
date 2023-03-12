@@ -32,9 +32,15 @@
 </nav>
 
 <div class="container-fluid mt-3">
-  <h3>Welcome to Zuxa Creations</h3>
-  <p>We create creative contents.</p>
-  <p>All Blogs.</p>
+    <h2>All Blogs</h2>
+    <% if (zblog.length > 0) {%>
+        <% zblog.forEach(zblog => { %>
+            <h3 class="title"><%= zblog.title %></h3>
+            <p class="snippet"><%= zblog.snippet %></p>
+        <% }) %>
+    <% } else { %>
+            <p>There are no blogs to display...</p>
+        <% } %>
 </div>
 
 </body>
