@@ -1,5 +1,12 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose =require('mongoose');
+
+//connect to mongoDB
+const dbURI = 'mongodb+srv://zuxa:uxM5PFC8PZUTLx2q@cluster0.tqvys8e.mongodb.net/zblog?retryWrites=true&w=majority';
+mongoose.connect(dbURI, { useNewParser: true, useUnifiedTopology: true})
+    .then((result) => console.log('connected to DB successfully'))
+    .catch((err) => console.log(err));
 
 //Express app
 const app = express();
